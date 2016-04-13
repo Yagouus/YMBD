@@ -1,7 +1,7 @@
-angular.module("misPelisSeriesApp").controller("PeliculasProximamenteCtrl", ["$scope", "$http", function ($scope, $http){
+angular.module("misPelisSeriesApp").controller("PeliculasProximamenteCtrl", ["$scope", "ApiService" ,function ($scope, ApiService){
 
-    $http
-        .get("https://api.themoviedb.org/3/movie/upcoming?api_key=f04738bec9fcb61acc58413946b9403c&language=es")
+    ApiService
+        .consultaApi("movie/upcoming")
         .then(
             function(resultado){
                 $scope.peliculas = resultado.data.results;
@@ -10,5 +10,4 @@ angular.module("misPelisSeriesApp").controller("PeliculasProximamenteCtrl", ["$s
                 alert("Algo no ha ido bien.");
             }
         );
-
 }]);
