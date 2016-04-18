@@ -10,4 +10,8 @@ angular.module("misPelisSeriesApp").controller("PeliculasCarteleraCtrl", ["$scop
                 alert("Algo no ha ido bien.");
             }
         );
+
+    $scope.rutaImagen = function (imagen) {
+        return ApiService.obtenerRutaImagen(45, imagen)
+    }
 }]);

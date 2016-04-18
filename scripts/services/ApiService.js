@@ -9,7 +9,7 @@ angular.module("misPelisSeriesApp").service("ApiService", ["$http" , "settings",
     };
 
     this.obtenerRutaImagen = function (tamano, ruta) {
-        return settings.rutaImagenApi  + tamano + ruta;
+        return ruta == null ? null : settings.rutaImagenApi  + tamano + ruta;
     }
 
 }]);
