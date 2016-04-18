@@ -1,13 +1,5 @@
-angular.module("misPelisSeriesApp").controller("PeliculasProximamenteCtrl", ["$scope", "ApiService" ,"$filter" ,function ($scope, ApiService, $filter){
+angular.module("misPelisSeriesApp").controller("PeliculasProximamenteCtrl", ["$scope", "Peliculas" ,"$filter" ,function ($scope, Peliculas, $filter){
 
-    ApiService
-        .consultaApi("movie/upcoming")
-        .then(
-            function(resultado){
-                $scope.peliculas = $filter("orderBy")(resultado.data.results, "release_date");
-            },
-            function () {
-                alert("Algo no ha ido bien.");
-            }
-        );
+    $scope.peliculas = $filter("orderBy")(Peliculas.data.results, "release_date");
+
 }]);

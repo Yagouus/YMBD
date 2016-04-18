@@ -16,7 +16,12 @@ angular.module("misPelisSeriesApp", ["ngRoute", "route-segment", "view-segment"]
 
       $routeSegmentProvider.within("peliculas").segment("proximamente",{
           controller:"PeliculasProximamenteCtrl",
-          templateUrl:"views/PeliculasProximamente.html"
+          templateUrl:"views/PeliculasProximamente.html",
+          resolve: {
+              Peliculas: ["ApiService", function (ApiService) {
+                  return ApiService.consultaApi("movie/upcoming");
+              }]
+          }
       });
 
       $routeSegmentProvider.within("peliculas").segment("cartelera",{
