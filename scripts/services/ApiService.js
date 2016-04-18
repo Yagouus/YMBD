@@ -8,4 +8,8 @@ angular.module("misPelisSeriesApp").service("ApiService", ["$http" , "settings",
             + "&language=" + settings.language)
     };
 
+    this.obtenerRutaImagen = function (tamano, ruta) {
+        return "http://image.tmdb.org/t/p/w" + tamano + ruta;
+    }
+
 }]);
