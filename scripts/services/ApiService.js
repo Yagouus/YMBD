@@ -1,7 +1,7 @@
 angular.module("misPelisSeriesApp").service("ApiService", ["$http" , "settings",function ($http, settings) {
 
     this.consultaApi = function (servicio) {
-        return $http.get("https://api.themoviedb.org/"
+        return $http.get(settings.rutaApi
             + settings.apiVersion + "/"
             + servicio
             + "?api_key=" + settings.apiKey
@@ -9,7 +9,7 @@ angular.module("misPelisSeriesApp").service("ApiService", ["$http" , "settings",
     };
 
     this.obtenerRutaImagen = function (tamano, ruta) {
-        return "http://image.tmdb.org/t/p/w" + tamano + ruta;
+        return settings.rutaImagenApi  + tamano + ruta;
     }
 
 }]);
