@@ -35,7 +35,12 @@ angular.module("misPelisSeriesApp", ["ngRoute", "route-segment", "view-segment"]
 
       $routeSegmentProvider.within("peliculas").segment("detalles", {
           controller:"PeliculasDetallesCtrl",
-          templateUrl:"views/PeliculasDetalles.html"
+          templateUrl:"views/PeliculasDetalles.html",
+          resolve: {
+              Pelicula: ["ApiService", "$routeParams", function (ApiService, $routeParams) {
+                  return ApiService.consultaApi("movie/" + $routeParams.idPelicula);
+              }]
+          }
       });
 
       //Series
