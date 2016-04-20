@@ -6,6 +6,7 @@ angular.module("misPelisSeriesApp", ["ngRoute", "route-segment", "view-segment"]
       $routeSegmentProvider.when("/peliculas", "peliculas.proximamente");
       $routeSegmentProvider.when("/peliculas/proximamente", "peliculas.proximamente");
       $routeSegmentProvider.when("/peliculas/cartelera", "peliculas.cartelera");
+      $routeSegmentProvider.when("/peliculas/detalles", "peliculas.detalles");
       $routeSegmentProvider.when("/series", "series");
       //$routeSegmentProvider.when("/series/hoy", "series.hoy");
       //$routeSegmentProvider.when("/series/emision", "series.emision");
@@ -30,6 +31,11 @@ angular.module("misPelisSeriesApp", ["ngRoute", "route-segment", "view-segment"]
       $routeSegmentProvider.within("peliculas").segment("cartelera",{
           controller:"PeliculasCarteleraCtrl",
           templateUrl:"views/PeliculasCartelera.html"
+      });
+
+      $routeSegmentProvider.within("peliculas").segment("detalles", {
+          controller:"PeliculasDetallesCtrl",
+          templateUrl:"views/PeliculasDetalles.html"
       });
 
       //Series
