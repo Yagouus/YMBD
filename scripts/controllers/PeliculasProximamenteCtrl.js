@@ -1,11 +1,8 @@
-angular.module("misPelisSeriesApp").controller("PeliculasProximamenteCtrl", ["$scope", "Peliculas", "ApiService", "$location", "$filter" ,function ($scope, Peliculas, ApiService, $location, $filter){
+angular.module("misPelisSeriesApp").controller("PeliculasProximamenteCtrl", ["$scope", "Peliculas", "$location", "$filter" ,function ($scope, Peliculas, $location, $filter){
 
     $scope.peliculas = $filter("orderBy")(Peliculas.data.results, "release_date");
 
-    $scope.rutaImagen = function (imagen) {
-        return ApiService.obtenerRutaImagen(45, imagen)
-    };
-    
+    //Routes to detail
     $scope.verDetalle = function (id) {
         $location.path("/peliculas/detalles").search({
             idPelicula: id

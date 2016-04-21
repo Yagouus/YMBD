@@ -1,4 +1,4 @@
-angular.module("misPelisSeriesApp").controller("PeliculasCarteleraCtrl", ["$scope", "ApiService" ,function ($scope, ApiService){
+angular.module("misPelisSeriesApp").controller("PeliculasCarteleraCtrl", ["$scope", "$location", "ApiService" ,function ($scope, $location, ApiService){
 
     ApiService
         .consultaApi("movie/now_playing")
@@ -11,7 +11,11 @@ angular.module("misPelisSeriesApp").controller("PeliculasCarteleraCtrl", ["$scop
             }
         );
 
-    $scope.rutaImagen = function (imagen) {
-        return ApiService.obtenerRutaImagen(45, imagen)
-    }
+    //Routes to detail
+    $scope.verDetalle = function (id) {
+        $location.path("/peliculas/detalles").search({
+            idPelicula: id
+        });
+    };
+
 }]);

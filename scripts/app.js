@@ -1,5 +1,5 @@
 //Definimos modulos
-angular.module("misPelisSeriesApp", ["ngRoute", "route-segment", "view-segment"]);
+angular.module("misPelisSeriesApp", ["ngRoute", "route-segment", "view-segment", "angular-loading-bar"]);
 
 //Definimos secciones
   angular.module("misPelisSeriesApp").config(["$routeSegmentProvider", "$routeProvider", function ($routeSegmentProvider, $routeProvider) {
