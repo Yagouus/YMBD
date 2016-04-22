@@ -1,7 +1,6 @@
 angular.module("misPelisSeriesApp").directive("voting", ["$compile", function ($compile) {
     return{
         restrict: "AE",
-        replace: true,
         scope:{
             rate:"@"
         },
