@@ -1,14 +1,14 @@
-angular.module("misPelisSeriesApp").directiva("voting", ["$compile", function ($compile) {
+angular.module("misPelisSeriesApp").directive("voting", ["$compile", function ($compile) {
     return{
         restrict: "AE",
         replace: true,
         scope:{
             rate:"@"
         },
-        link: function (scope) {
+        link: function (scope, elemento) {
             var number = parseFloat(scope.rate);
             var round = Math.round(number);
-            var view = "<div>";
+            var view = "";
 
             //Full stars
             for (var f = 0; f < round; f++){
@@ -21,11 +21,13 @@ angular.module("misPelisSeriesApp").directiva("voting", ["$compile", function ($
             }
 
             //Close div
-            view += "</div>";
+            //view += "</div>";
 
             //Create DOM element
             var element = angular.element(view);
-            var compiled = $compile(element)(scope)
+            var compiled = $compile(element)(scope);
+
+            elemento.replaceWith(compiled);
 
         }
     }
