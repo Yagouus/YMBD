@@ -9,7 +9,6 @@
                     <div class="col s12"> <h4>{{Pelicula.title}}</h4></div>
                 </div>
                 <div class="row">
-
                     <div class="col m12 l2"><img class="z-depth-1" ng-src="{{rutaImagen(Pelicula.poster_path)}}"/></div>
                     <div class="col m12 l10">
                         <blockquote>
@@ -44,6 +43,8 @@
             <div class="card-content">
                 <div class="row">
                     <div class="col s12"> <span class="card-title">Géneros</span></div>
+                </div>
+                <div class="row">
                     <div class="col s12">
                         <genre collection="Pelicula.genres"></genre>
                     </div>

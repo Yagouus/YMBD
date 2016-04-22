@@ -5,11 +5,12 @@ angular.module("misPelisSeriesApp").directive("genre", ["$compile", function ($c
             collection:"="
         },
         link: function(scope, elemento){
-            var view="<blockquote>";
+            scope.searchGenre = function () {
+            };
+            var view="";
             for(var f = 0, F = scope.collection.length; f < F; f++){
-                view += "<p>" + scope.collection[f].name + "</p>";
+                view += "<a href='' ng-click='searchGenre()' class='chip hoverable'>" + scope.collection[f].name + "</a> ";
             }
-            view+="</blockquote>";
             var element = angular.element(view);
             var compiled = $compile(element)(scope);
             elemento.replaceWith(compiled);

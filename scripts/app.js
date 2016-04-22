@@ -10,7 +10,7 @@ angular.module("misPelisSeriesApp", ["ngRoute", "route-segment", "view-segment",
       $routeSegmentProvider.when("/series", "series");
       //$routeSegmentProvider.when("/series/hoy", "series.hoy");
       //$routeSegmentProvider.when("/series/emision", "series.emision");
-      $routeProvider.otherwise("/peliculas/proximamente");
+      $routeProvider.otherwise("/peliculas/cartelera");
       
       //Peliculas
       $routeSegmentProvider.segment("peliculas", {
