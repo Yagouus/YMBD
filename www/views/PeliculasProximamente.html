@@ -1,0 +1,41 @@
+<div class="row">
+    <div class="col s12">
+        <button class="btn waves-effect green" ng-click="searchShow=true">Buscar</button>
+    </div>
+</div>
+
+<!--Search section-->
+<div class="col s12" ng-show="searchShow">
+    <div class="card">
+        <div class="card-content">
+            <div class="row">
+                <div class="col s12"> <span class="card-title">Buscar</span>
+                    <span class="right">
+                        <a href="" ng-click="searchShow=false"><i class="material-icons">close</i></a>
+                    </span>
+                </div>
+            </div>
+            <div class="row">
+                <form class="col s12">
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <input id="title" type="text" ng-model="search.title">
+                            <label for="title">Título</label>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<table class="striped">
+    <thead>
+        <tr>
+            <th data-field="id">Titulo</th>
+        </tr>
+    </thead>
+    <tbody>
+    <tr ng-repeat="pelicula in peliculas | filter:search" media-item datos="pelicula" al-seleccionar="verDetalle(mediaId)"></tr>
+    </tbody>
+</table>

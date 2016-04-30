@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>YMDB</title>
+    <meta charset="utf-8">
+
+    <!-- Styling-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/css/materialize.min.css">
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/js/materialize.min.js"></script>
+    <link rel="stylesheet" href="styles/custom.css">
+
+
+    <!--Compiled and minified AngularJS-->
+    <script src="vendor/angular.min.js"></script>
+    <script src="vendor/angular-route.js"></script>
+    <script src="vendor/angular-route-segment.js"></script>
+    <script src="vendor/angular-locale_es-es.js"></script>
+
+    <!--App-->
+    <script src="scripts/app.js"></script>
+
+    <!--Controllers-->
+    <script src="scripts/controllers/NavCtrl.js"></script>
+    <script src="scripts/controllers/SeriesCtrl.js"></script>
+    <script src="scripts/controllers/PeliculasCtrl.js"></script>
+    <script src="scripts/controllers/PeliculasProximamenteCtrl.js"></script>
+    <script src="scripts/controllers/PeliculasCarteleraCtrl.js"></script>
+    <script src="scripts/controllers/PeliculasDetallesCtrl.js"></script>
+
+    <!--Directives-->
+    <script src="scripts/directives/MediaItem.js"></script>
+    <script src="scripts/directives/Voting.js"></script>
+    <script src="scripts/directives/Genre.js"></script>
+
+    <!--Misc-->
+    <script src="scripts/services/ApiService.js"></script>
+    <script src="scripts/Values/Settings.js"></script>
+    <script src="scripts/filters/fechaEstreno.js"></script>
+
+   <!--Loading-->
+    <script type='text/javascript' src='//cdnjs.cloudflare.com/ajax/libs/angular-loading-bar/0.9.0/loading-bar.min.js'></script>
+    <link rel='stylesheet' href='//cdnjs.cloudflare.com/ajax/libs/angular-loading-bar/0.9.0/loading-bar.min.css' type='text/css' media='all' />
+
+    <!--FontAwesome-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
+
+    <!--Let browser know website is optimized for mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+</head>
+
+<body ng-app="misPelisSeriesApp">
+<div class="container">
+
+  <!--Navbar-->
+  <nav ng-controller="NavCtrl">
+    <div class="nav-wrapper green">
+        <a href="#" class="brand-logo center">YMDB</a>
+        <ul id="nav-mobile" class="right hide-on-med-and-down">
+          <li ng-class="{'active': rutaEsPeliculas()}"><a href="#/peliculas">Películas</a></li>
+          <li ng-class="{'active': rutaEsSeries()}"><a href="#/series">Series</a></li>
+        </ul>
+      </div>
+  </nav>
+
+
+  <!--Angular section-->
+    <section app-view-segment="0"></section>
+
+  </div>
+</body>
