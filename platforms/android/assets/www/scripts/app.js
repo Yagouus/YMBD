@@ -3,7 +3,7 @@ angular.module("misPelisSeriesApp", ["ngRoute", "route-segment", "view-segment",
 
 //Definimos secciones
   angular.module("misPelisSeriesApp").config(["$routeSegmentProvider", "$routeProvider", function ($routeSegmentProvider, $routeProvider) {
-      $routeSegmentProvider.when("/peliculas", "peliculas.proximamente");
+      $routeSegmentProvider.when("/peliculas", "peliculas.cartelera");
       $routeSegmentProvider.when("/peliculas/proximamente", "peliculas.proximamente");
       $routeSegmentProvider.when("/peliculas/cartelera", "peliculas.cartelera");
       $routeSegmentProvider.when("/peliculas/detalles", "peliculas.detalles");

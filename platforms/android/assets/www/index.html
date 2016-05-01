@@ -51,22 +51,29 @@
 </head>
 
 <body ng-app="misPelisSeriesApp">
-<div class="container">
+
 
   <!--Navbar-->
+  <div class="navbar-fixed">
   <nav ng-controller="NavCtrl">
     <div class="nav-wrapper green">
         <a href="#" class="brand-logo center">YMDB</a>
+        <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
         <ul id="nav-mobile" class="right hide-on-med-and-down">
           <li ng-class="{'active': rutaEsPeliculas()}"><a href="#/peliculas">Películas</a></li>
           <li ng-class="{'active': rutaEsSeries()}"><a href="#/series">Series</a></li>
         </ul>
+        <ul class="side-nav" id="mobile-demo">
+            <li><a href="#/peliculas">Películas</a></li>
+            <li><a href="#/series">Series</a></li>
+        </ul>
       </div>
   </nav>
-
+</div>
 
   <!--Angular section-->
     <section app-view-segment="0"></section>
-
-  </div>
+<script>
+    $(".button-collapse").sideNav();
+</script>
 </body>
