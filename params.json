@@ -1,0 +1,6 @@
+{
+  "name": "YMDB",
+  "tagline": "YMDB (stands for Yagouus Movie DataBase) is a web app that interacts with TMDB",
+  "body": "# YMBD\r\n\r\nYMDB (stands for Yagouus Movie DataBase) is a web app that interacts with [TMDB](https://www.themoviedb.org/). \r\nIt's being developed with HTML5, CSS3 and AngularJS. Soon it will be transformed into a Cordova app.\r\n\r\nStay tuned.\r\n",
+  "note": "Don't delete this file! It's used internally to help with page regeneration."
+}
